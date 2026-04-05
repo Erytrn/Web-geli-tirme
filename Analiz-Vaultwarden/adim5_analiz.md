@@ -9,3 +9,6 @@ Vaultwarden'ın veri saklama mantığı 'Zero-Knowledge' (Sıfır Bilgi) prensib
 **Kritik Soru Yanıtı:** Bir saldırgan 'db.sqlite3' dosyasını ele geçirse bile içindeki verileri okuyamaz. Çünkü çözme anahtarı (Decryption Key) sunucuda değil, sadece kullanıcının hafızasındaki Master Password'den türetilir. 
 
 **Sonuç:** Vaultwarden mimarisi, sunucu tarafındaki bir sızıntının (Data Breach) kullanıcı verilerini ifşa etmesini imkansız kılacak şekilde tasarlanmıştır.
+### Adım 5: Kaynak Kod ve Auth Analizi (Deep Dive)
+- **Entrypoint:** Vaultwarden binary dosyası (/vaultwarden) ana giriş noktasıdır.
+- **Authentication:** Stateless JWT ve Client-side Hashing (PBKDF2) ile 'Zero-Knowledge' mimarisi doğrulanmıştır.
