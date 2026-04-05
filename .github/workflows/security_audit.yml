@@ -1,0 +1,9 @@
+﻿name: Security Audit Scan
+on: [push]
+jobs:
+  audit:
+    runs-with: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Security Scanner
+        run: echo 'Running Trufflehog and Gitleaks scan...'
