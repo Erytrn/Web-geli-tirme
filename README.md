@@ -1,14 +1,48 @@
-﻿# 🛡️ Siber Güvenlik Vize Projesi - Eray Turan
+﻿# \# 🛡️ Advanced Cyber Security Lab: Ransomware \& Vaultwarden Analysis
 
-Bu repository, Web Güvenliği dersi kapsamında hazırlanan iki aşamalı güvenlik projesini içermektedir.
+# 
 
-## ☣️ Faz 2: Ransomware Sandbox (L15) - ANALİZ RAPORU
-Simülasyon başarıyla tamamlanmıştır. Yapılan testlerde şu sonuçlar elde edilmiştir:
+# !\[GitHub top language](https://img.shields.io/github/languages/top/Erytrn/Web-geli-tirme?color=blue\&style=for-the-badge)
 
-1. **Saldırı Başarısı:** Savunma katmanları kapalıyken, taker.ps1 verileri AES-256 ile şifrelemiş ve anahtarı Webhook'a sızdırmıştır.
-2. **Savunma Başarısı:** savunma.ps1 çalıştırıldıktan sonra:
-   - **Network Block:** Firewall kuralları Outbound trafiği kesmiş, anahtarın sızması (Exfiltration) engellenmiştir.
-   - **File System Lock:** Yetki kısıtlaması ile ransomware'in dosyalara erişimi (Write/Delete) bloke edilmiştir.
-   - **Sonuç:** Kırmızı hata çıktıları, sistemin tam izolasyon (Sandbox) altında olduğunu kanıtlamaktadır.
+# !\[GitHub commit activity](https://img.shields.io/github/commit-activity/m/Erytrn/Web-geli-tirme?style=for-the-badge)
 
-## 🏗️ Faz 1: Vaultwarden Mimari Analizi (Devam Ediyor...)
+# !\[Security Status](https://img.shields.io/badge/Security-Hardened-green?style=for-the-badge)
+
+# 
+
+# Bu proje, \*\*Bahar 2026 Web Güvenliği\*\* dersi kapsamında hazırlanan, hem \*\*Red Team\*\* (Saldırı) hem de \*\*Blue Team\*\* (Savunma) pratiklerini içeren kapsamlı bir laboratuvar çalışmasıdır.
+
+# 
+
+# \---
+
+# 
+
+# \## 📂 Proje Yapısı (Directory Tree)
+
+# ```text
+
+# vize-proje/
+
+# ├── Analiz-Vaultwarden/       # 6 Aşamalı Derinlemesine Mimari Analiz
+
+# │   ├── adim1\_analiz.md       # Kurulum ve install.sh Analizi
+
+# │   ├── adim2\_analiz.md       # Forensics ve Temizlik
+
+# │   ├── adim3\_analiz.md       # CI/CD \& Webhook Analizi
+
+# │   ├── adim4\_analiz.md       # Docker \& Konteyner Güvenliği
+
+# │   ├── adim5\_analiz.md       # Veritabanı \& Şifreleme (RSA/AES)
+
+# │   └── adim6\_linux\_karsilastirma.md # Ubuntu vs Windows Analizi
+
+# ├── Simulasyon-L15/           # Ransomware Sandbox Deneyi
+
+# │   ├── ataker.ps1            # AES-256 Şifreleme Scripti
+
+# │   └── savunma.ps1           # Firewall \& İzolasyon Scripti
+
+# └── README.md                 # Proje Ana Raporu
+
